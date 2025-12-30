@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Villan Studio | Login</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/login.css">
+</head>
+
+<body>
+
+<div class="login-bg">
+  <div class="overlay"></div>
+
+  <div class="login-box">
+    <h2>Villan <span>Studio</span></h2>
+    <p>Demo OTP Login</p>
+
+    <input type="text" id="userInput" placeholder="Email or Mobile Number">
+
+    <button onclick="sendOTP()">Send OTP</button>
+
+    <div id="otpBox" style="display:none;">
+      <input type="text" id="otpInput" placeholder="Enter OTP">
+      <button onclick="verifyOTP()">Verify & Login</button>
+    </div>
+
+    <a href="index.html" class="back">← Back to Home</a>
+  </div>
+</div>
+
+<!-- SUCCESS -->
+<div class="success-modal" id="successModal">
+  <div class="success-box">
+    <div class="checkmark">✓</div>
+    <h3>Login Successful</h3>
+    <p>Redirecting...</p>
+  </div>
+</div>
+
+<script>
+let generatedOTP = null;
+
+const mobileRegex = /^[6-9]\d{9}$/;
+const emailRegex  = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+function sendOTP(){
+  const user = document.getElementById("userInput").value.trim();
+
+  if(user === ""){
+    alert("Enter Email or Mobile");
+    return;
+  }
+
+  if(!mobileRegex.test(user) && !emailRegex.test(user)){
+    alert("Enter valid 10-digit mobile or valid email");
+    return;
+  }
+
+  generatedOTP = Math.floor(1000 + Math.random()*9000);
+  alert("DEMO OTP: " + generatedOTP);
+
+  document.getElementById("otpBox").style.display = "block";
+}
+
+function verifyOTP(){
+  const otp = document.getElementById("otpInput").value.trim();
+
+  if(otp === generatedOTP?.toString()){
+    document.getElementById("successModal").style.display = "flex";
+    setTimeout(()=>location.href="booking.html",2000);
+  }else{
+    alert("Invalid OTP");
+  }
+}
+</script>
+
+</body>
+</html>

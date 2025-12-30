@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Villan Studio | Wedding Photography</title>
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<!-- CSS -->
+<link rel="stylesheet" href="css/index.css">
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+<nav>
+  <div class="logo">VILLAN<span>STUDIO</span></div>
+
+  <div class="menu">
+    <a href="#home">Home</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </div>
+
+  <div class="icon">
+    <a class="login-link" href="login.html">Login</a>
+  </div>
+</nav>
+
+<!-- ================= HERO ================= -->
+<section class="hero" id="home">
+  <div class="slider-wrapper">
+    <div class="slider" id="slider">
+      <div class="slide" style="background-image:url('image/slide1.jpg')"></div>
+      <div class="slide" style="background-image:url('image/slide2.jpg')"></div>
+      <div class="slide" style="background-image:url('image/slide3.jpg')"></div>
+      <div class="slide" style="background-image:url('image/slide1.jpg')"></div>
+      <div class="slide" style="background-image:url('image/slide2.jpg')"></div>
+      <div class="slide" style="background-image:url('image/slide3.jpg')"></div>
+    </div>
+  </div>
+
+  <div class="overlay"></div>
+
+  <div class="hero-content">
+    <h1>Capturing <span>Wedding Moments</span></h1>
+    <p>Professional Wedding, Portrait & Creative Photography</p>
+  </div>
+</section>
+
+<!-- ================= GALLERY ================= -->
+<section id="gallery">
+  <h2>Wedding Gallery</h2>
+
+  <div class="portfolio-item">
+    <img src="image/image1.jpg">
+    <img src="image/image2.jpg">
+    <img src="image/image3.jpg">
+    <img src="image/image4.jpg">
+    <img src="image/image5.jpg">
+    <img src="image/image6.jpg">
+    <img src="image/image7.jpg">
+    <img src="image/image8.jpg">
+    <img src="image/image9.jpg">
+  </div>
+</section>
+
+<!-- POPUP -->
+<div class="popup" id="popup">
+  <span class="close" onclick="closePopup()">&times;</span>
+  <img id="popup-img">
+</div>
+
+<!-- ================= ABOUT ================= -->
+<section id="about" class="about-section">
+  <h2>About Me</h2>
+  <p class="sub-title">Professional Wedding Photographer</p>
+
+  <div class="about-card">
+    <img src="image/about-main.jpeg">
+    <p>
+      I am a professional photographer from Satna, specializing in
+      Wedding, Pre-Wedding, and Candid Photography.
+    </p>
+    <h3>— Pranshu Verman</h3>
+  </div>
+
+  <div class="about-slider">
+    <div class="about-track">
+      <img src="image/scroll1.jpg">
+      <img src="image/scroll2.jpg">
+      <img src="image/scroll3.jpg">
+      <img src="image/scroll4.jpg">
+      <img src="image/scroll5.jpg">
+      <img src="image/scroll6.jpg">
+      <img src="image/scroll7.jpg">
+      <img src="image/scroll8.jpg">
+      <img src="image/scroll19.jpg">  
+      <img src="image/scroll10.jpg">
+      <img src="image/scroll11.jpg">
+
+      <!-- duplicate -->
+      <img src="image/scroll12.jpg">
+      <img src="image/scroll13.jpg">
+      <img src="image/scroll14.jpg">
+      <img src="image/scroll15.jpg">
+      <img src="image/scroll16.jpg">
+      <img src="image/scroll17.jpg">
+      <img src="image/scroll18.jpg">
+      <img src="image/scroll19.jpg">
+      <img src="image/scroll20.jpg">
+      <img src="image/scroll21.jpg">
+      <img src="image/scroll22.jpg">
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section id="contact" class="contact-section">
+  <h2>Contact Us</h2>
+  <p class="contact-sub">Let’s create memories together</p>
+
+  <div class="contact-container">
+
+    <!-- LEFT -->
+    <div class="contact-info">
+      <h3>Villan Studio</h3>
+      <p>Wedding & Portrait Photography</p>
+
+      <div class="info-box">
+        <i class="fa-solid fa-location-dot"></i>
+        <span>Satna, Madhya Pradesh</span>
+      </div>
+
+      <div class="info-box">
+        <i class="fa-solid fa-phone"></i>
+        <span>+91 8103162875</span>
+      </div>
+
+      <div class="info-box">
+        <i class="fa-solid fa-envelope"></i>
+        <span>villanstudio@gmail.com</span>
+      </div>
+
+      <div class="social-icons">
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+      </div>
+    </div>
+
+    <!-- RIGHT -->
+    <div class="contact-right">
+
+      <div class="contact-form">
+        <h3>Send Message</h3>
+        <input type="text" placeholder="Your Name">
+        <input type="email" placeholder="Your Email">
+        <textarea rows="4" placeholder="Your Message"></textarea>
+        <button>Send</button>
+      </div>
+
+      <div class="contact-map">
+        <iframe 
+          src="https://www.google.com/maps?q=Satna,Madhya%20Pradesh&output=embed"
+          loading="lazy">
+        </iframe>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================= SCRIPTS ================= -->
+<script>
+const slider = document.getElementById("slider");
+let index = 0;
+
+setInterval(() => {
+  index = (index + 1) % slider.children.length;
+  slider.style.transform = `translateX(-${index * 100}vw)`;
+}, 3000);
+</script>
+
+<script>
+const images = document.querySelectorAll(".portfolio-item img");
+const popup = document.getElementById("popup");
+const popupImg = document.getElementById("popup-img");
+
+images.forEach(img => {
+  img.onclick = () => {
+    popup.style.display = "flex";
+    popupImg.src = img.src;
+  };
+});
+
+function closePopup(){
+  popup.style.display = "none";
+}
+</script>
+
+</body>
+</html>

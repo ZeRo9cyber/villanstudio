@@ -1,0 +1,147 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+
+body{
+  background:#000;
+  color:#fff;
+}
+
+/* ===== TOP BAR ===== */
+.topbar{
+  height:60px;
+  padding:0 40px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  background:#000;
+  position:relative;
+  z-index:5;
+}
+
+.logo{
+  font-size:20px;
+  font-weight:600;
+}
+
+.logo span{
+  color:#ff004f;
+}
+
+/* HOME BUTTON (LOGIN STYLE) */
+.home-btn{
+  background:#ff004f;
+  color:#fff;
+  padding:8px 20px;
+  border-radius:6px;
+  text-decoration:none;
+}
+
+.home-btn:hover{
+  background:#e60045;
+  transform:translateY(-2px);
+}
+
+/* ===== BACKGROUND ===== */
+.booking-section{
+  height:calc(100vh - 60px);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background:url("../image/booking-bg.jpg") center/cover no-repeat;
+  position:relative;  
+  filter: brightness(5.2);
+}
+/* DARK OVERLAY */
+.overlay{
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,0.75);
+}
+
+/* ===== BOOKING CARD ===== */
+.booking-card{
+  width:420px;
+  background:rgba(15,15,15,0.95);
+  padding:35px;
+  border-radius:20px;
+  box-shadow:0 0 70px rgba(255,0,79,0.25);
+  position:relative;
+  z-index:2;
+  animation:fadeUp 0.8s ease;
+}
+
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(40px)}
+  to{opacity:1;transform:translateY(0)}
+}
+
+.booking-card h2{
+  text-align:center;
+  font-weight:600;
+  margin-bottom:8px;
+}
+
+.booking-card h2 span{
+  color:#ff004f;
+}
+
+.subtitle{
+  text-align:center;
+  font-size:13px;
+  color:#aaa;
+  margin-bottom:25px;
+}
+
+/* ===== FORM ===== */
+form input,
+form select,
+form textarea{
+  width:100%;
+  margin-bottom:14px;
+  padding:12px 14px;
+  border-radius:8px;
+  border:none;
+  background:#1f1f1f;
+  color:#fff;
+  font-size:14px;
+}
+
+form input:focus,
+form select:focus,
+form textarea:focus{
+  outline:2px solid #ff004f;
+}
+
+form textarea{
+  resize:none;
+}
+
+/* ===== BUTTON ===== */
+form button{
+  width:100%;
+  padding:13px;
+  border:none;
+  border-radius:30px;
+  background:#ff004f;
+  color:#fff;
+  font-size:15px;
+  font-weight:500;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+form button:hover{
+  background:#e60045;
+  transform:translateY(-2px);
+}
+
+/* ===== MOBILE ===== */
+@media(max-width:480px){
+  .booking-card{
+    width:90%;
+  }
+}

@@ -1,0 +1,124 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+
+body{
+  height:100vh;
+  overflow:hidden;
+}
+
+.login-bg{
+  height:100vh;
+  background:url("../image/login-bg.jpg") center/cover no-repeat;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  position:relative;
+}
+
+.overlay{
+  pointer-events: none;
+}
+
+
+.login-box{
+  position:relative;
+  z-index:2;
+  width:360px;
+  background:#111;
+  padding:35px;
+  border-radius:18px;
+  text-align:center;
+}
+
+.login-box h2{
+  color:#fff;
+}
+.login-box span{
+  color:#ff004f;
+}
+
+.login-box p{
+  color:#aaa;
+  margin-bottom:20px;
+}
+
+.login-box input{
+  width:100%;
+  padding:12px;
+  margin-bottom:12px;
+  border:none;
+  border-radius:8px;
+  background:#1f1f1f;
+  color:#fff;
+}
+
+.login-box button{
+  width:100%;
+  padding:12px;
+  border:none;
+  border-radius:25px;
+  background:#ff004f;
+  color:#fff;
+  cursor:pointer;
+}
+
+#otpBox{
+  display:none;
+  margin-top:15px;
+}
+
+.back{
+  display:inline-block;
+  margin-top:15px;
+  color:#aaa;
+  text-decoration:none;
+}
+
+/* SUCCESS */
+.success-modal,
+.error-modal{
+  position:fixed;
+  inset:0;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  background:rgba(0,0,0,0.7);
+  z-index:999;
+}
+
+.success-box,
+.error-box{
+  background:#111;
+  padding:30px;
+  border-radius:16px;
+  text-align:center;
+}
+
+.checkmark{
+  background:#ff004f;
+  width:60px;
+  height:60px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:30px;
+  margin:auto;
+  color:#fff;
+}
+
+.error-icon{
+  background:#ff004f;
+  width:50px;
+  height:50px;
+  border-radius:50%;
+  margin:auto;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#fff;
+}
